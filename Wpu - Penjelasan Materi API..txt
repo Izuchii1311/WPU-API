@@ -95,3 +95,9 @@ RESTful API
 > Harus Stateless
 
 Jadi perbedaan RESTful API dan REST API adalah, jika RESTful API menggunakan secara benar.
+
+
+
+
+
+#3
