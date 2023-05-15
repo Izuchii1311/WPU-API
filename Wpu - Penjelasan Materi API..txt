@@ -1,0 +1,97 @@
+#1 APA ITU API
+
+API membuat kita terkoneksi satu sama lain.
+
+{REST:API}
+Apa itu API (Application Programming Interface)? 
+adalah sekumpulan fungsi, subroutine, protokol komunikasi, atau kakas / tools untuk membuat perangkat lunak. (wikipedia.org)
+
+Interface dari API. Apa itu Interface / antarmuka?
+bagian yang sama antara dua atau lebih komponen terpisah pada sebuah sistem komputer. (wikipedia.org)
+
+API
+> Antarmuka yang berupa kumpulan fungsi yang dapat di-panggil atau dijalankan oleh program lain.
+> Penerapannya sangat luas
+  > Bahasa Pemrograman
+  > Library & Framework
+  > Sistem Operasi
+  > Web API / Web Service
+
+Web API / Web Service
+- SOAP (Simple Object Access Protocol)
+- REST (REpresentational State Transfer)
+
+"Sebuah sistem perangkat lunak yang dibuat untuk mendukung interoperabilitas / interaksi antar 2 aplikasi yang berbeda melalui jaringan (Biasanya Protocol HTTP) ."
+
+Pre Requisite...
+> JavaScript Dasar
+> Object
+> DOM
+> PHP Dasar (PHP, OOP, MVC)
+> CodeIgniter / Framework
+
+
+
+
+
+#2 REST & HTTP
+
+Konsep dari REST & HTTP.
+
+Apa itu REST API (Style Gaya Coding)?
+"Gaya arsitektural perangkat lunak yang didalamnya mendefinisikan aturan aturan untuk membuat web service."
+
+Illustrasi
+> API adalah Penghubung.
+> Rest API adalah Aturannya.
+> Ada Request & Response
+> Data yang dikirim / diterima berupa JSON.
+
+REST API
+> REpresentational State Transfer
+> Gaya Perancangan / Architectural Style
+> Stateless
+> By. Roy Fielding, disertai PhD-nya.
+> Hampir selalu menggunakan protokol HTTP
+> Memungkinkan interaksi antar mesin.
+
+
+HTTP (Hypertext Transfer Protocol)
+
+URL (Uniform Resource Locator) -- Sebuah alamat untuk mengakses sumber daya (halaman html, gambar, css, script.) atau resource.
+> Alamat dari sebuah resource yang dapat kita akses di Internet
+> Contoh :
+  https://www.facebook.com/
+> Meskipun bisa diubah dengan mod_rewrite atau .htaccess
+
+Kode Status
+> 200 = Success
+> 404 = Not Found
+> 500 = Server Error 
+
+Kenapa butuh kode status? 
+Karena interaksi mesin dengan mesin.
+
+HTTP Method / Verbs
+> Get = Mengambil Data
+> Post = Menambah Data
+> Put = Mengubah Data
+> Delete = Menghapus Data
+
+* Put dan Delete tidak bisa menggunakan browser
+Tetapi bahasa pemrograman bisa melakukan ini.
+Jika ingin membuat HTTP yang RESTful maka harus menggunakan ke-4 Methodnya.
+
+Stateless = Ketidak adaan sebuah state dalam aplikasi.
+> Setiap Request HTTP dilakukan secara terisolasi.
+> Server tidak menyimpan state apapun mengenai sesi dari client. (tidak ada session)
+> Setiap request yang dikirimkan dari client harus berisi semua informasi yang dibutuhkan server, termasuk informasi otentikasi.
+
+
+Kesimpulan
+RESTful API
+> Harus Menggunakan method yang benar.
+> URI / endpoints-nya menggunakan kata benda, bukan kata kerja.
+> Harus Stateless
+
+Jadi perbedaan RESTful API dan REST API adalah, jika RESTful API menggunakan secara benar.
