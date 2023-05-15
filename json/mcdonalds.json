@@ -1,0 +1,50 @@
+[
+    {
+        "menu" : {
+            "makanan" : [
+                {
+                    "menuPaket1" : "Big Mac® Gratis McFlurry Oreo",
+                    "harga" : 62500
+                },
+                {
+                    "menuPaket2" : "Cheeseburger Deluxe Gratis McFlurry Oreo",
+                    "harga" : 54000
+                },
+                {
+                    "menuPaket3" : "6pcs McNuggets® Gratis McFlurry Oreo",
+                    "harga" : 52500
+                }
+            ],
+            
+            "minuman" : [
+                {
+                    "menuMinuman1" : "Iced Coffee Caramel Macchiato with Jelly Float",
+                    "harga" : 27500
+                },
+                {
+                    "menuMinuman2" : "Iced Lychee Tea",
+                    "harga" : 20000
+                },
+                {
+                    "menuMinuman3" : "Premium Roast Coffee",
+                    "harga" : 12000
+                }
+            ],
+            
+            "pencuciMulut" : [
+                {
+                    "menu1" : "Double Choco Pie",
+                    "harga" : 17000
+                }, 
+                {
+                    "menu2" : "Double Choco Pie Ala Mode Chocolate",
+                    "harga" : 23500
+                },
+                {
+                    "menu3" : "Double Choco Pie Ala Mode Strawberry",
+                    "harga" : 23500
+                }
+            ]
+        }
+    }
+]

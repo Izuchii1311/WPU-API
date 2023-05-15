@@ -1,0 +1,30 @@
+[
+{
+    "nama" : "Luthfi Nur Ramadhan",
+    "umur" : 20,
+    "npm"  : "2142430",
+    "lulus": false,
+    "hobby": [
+        "coding", 
+        "gaming", 
+        "anime"],
+    "pembimbing" : {
+        "pembimbing1" : "Pa Gelar Aditya",
+        "pembimbing2" : "Pa Sandhika Galih"
+    }
+},
+{
+    "nama" : "Izuchii",
+    "umur" : 17,
+    "npm"  : "2142431",
+    "lulus": true,
+    "hobby": [
+        "coding", 
+        "gaming", 
+        "anime"],
+    "pembimbing" : {
+        "pembimbing1" : "Pa Gelar Aditya",
+        "pembimbing2" : "Pa Sandhika Galih"
+    }
+}
+]

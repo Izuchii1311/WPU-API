@@ -100,4 +100,61 @@ Jadi perbedaan RESTful API dan REST API adalah, jika RESTful API menggunakan sec
 
 
 
-#3
+#3 Apa itu JSON?
+
+{REST:API}
+{JSON} -- JavaScript Object Notation
+
+Apa itu JSON ?
+" JavaScript Object Notation (JSON) adalah sebuah file format standar yang menggunakan tulisan yang dapat dibaca oleh manusia untuk pertukaran Data, yang didalamnya berisi pasangan antara key dan value."
+https://en.wikipedia.org/wiki/json
+
+JSON
+> Format pertukaran data tekstual yang sangat ringan.
+> Sintaksnya sangan sederhana dan jelas (dibanding XML).
+> Dapat digunakan pada beragam Bahasa Pemrograman.
+> Tiap bahasa pemrograman memiliki cara tersendiri untuk berinteraksi dengan JSON.
+> Dibuat berdasarkan format object pada JavaScript.
+> Digunakan juga untuk file konfigurasi (tiak disarankan).
+> Tipe file JSON memiliki ekstensi .json
+> Format JSON dibuat dan diusulkan oleh Douglas Crockford.
+
+
+Object pada JavaScript
+" Object pada JavaScript adalah kumpulan property, dan property ditulis dalam bentuk pasangan antara key dan value. "
+
+JSON tidak memiliki method.
+
+Membuat json { "key" : "value" }
+> key selalu dibungkus menggunakan " "
+> Tipe data pada JSON
+  > Boolean (true/false)
+  > Array - ['value1', 'value2', '...']
+  > String (bungkus menggunakan " ")
+  > Object { "key" : "value" }
+  > Number
+  > null
+
+Bekerja Dengan JSON (PHP)
+> json_encode(), untuk mengubah array atau object yang kita punya menjadi JSON.
+> json_decode(), untuk mengambil JSON dirubah menjadi Array supaya gampang untuk dimanipulasi.
+
+Mengakses JSON dari file lain menggunakan
+> file_get_contents()
+
+Untuk latihan menggunakan php adalah latihan1.php dan latihan2.php
+
+
+Bekerja Dengan JSON (JavaScript)
+> JSON.stringify(), untuk mengubah object menjadi JSON.
+> JSON.parse(), untuk mengubah JSON menjadi Array / Object.
+
+Mengakses JSON 
+> AJAX (Vanilla JavaScript)
+  > XMLHttpRequest
+  > JQuery
+
+Untuk latihan menggunakan js adalah file latihan3.html dan script.js
+Note: Jika ajak tidak bisa menampilkan apapun atau error run menggunakan live server.
+
+Latihan mcdonalds.json
