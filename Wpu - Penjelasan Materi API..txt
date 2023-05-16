@@ -188,3 +188,24 @@ CORS (Cross Origin Resource Sharing) - Konfigurasi di server
 > Caranya adalah dengan membuat server memperbolehkan adanya akses data dari luar domain.
 > Modifikasi Access-Control-Allow-Origin
 > Biasanya menggunakan file .htaccess
+
+
+
+
+
+#5 Apa itu Public API ?
+
+{REST:API}::PUBLIC_API
+
+Public API, adalah "Sebuah API (REST API) yang dapat diakses secara public, yang di dalamnya tersedia aturan untuk developer agar dapat mengakses data."
+
+Pubic API
+> https://any-api.com/
+> https://github.com/toddmotto/public_apis
+> https://github.com/farizdotid
+
+Otentikasi (Auth)
+> API tanpa otentikasi
+> Key / Token
+> OAuth -> contoh : Login via.facebook / via.google
+> CORS
