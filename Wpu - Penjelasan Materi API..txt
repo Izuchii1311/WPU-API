@@ -158,3 +158,33 @@ Untuk latihan menggunakan js adalah file latihan3.html dan script.js
 Note: Jika ajak tidak bisa menampilkan apapun atau error run menggunakan live server.
 
 Latihan mcdonalds.json
+
+
+
+
+
+#4 Bekerja dengan JSON
+
+{JSON}
+JavaScript Object Notation.
+
+Download file Pizza.json dan Image di wpu
+
+Akan mencoba data JSON menggunakan PHP, file latihan1.php 
+
+Akan mencoba data JSON menggunakan JavaScript file latihan2.html & script.js
+
+
+Bekerja dengan JSON diluar domain, jika diluar domain akan ada. 
+
+Same-origin Policy
+> Kebijakan browser untuk mengakses dan menampilkan data / script / document dari tempat lain diluar domainnya.
+> Membuat kita tidak bisa mengakses data (JSON) diluar domain website kita.
+
+Jadi kita tidak bisa melakukan sharing json, secara begitu saja.
+
+CORS (Cross Origin Resource Sharing) - Konfigurasi di server
+> Mekanisme yang membuat kita dapat mengakses sebuah resource (data, document, script) dari domain.
+> Caranya adalah dengan membuat server memperbolehkan adanya akses data dari luar domain.
+> Modifikasi Access-Control-Allow-Origin
+> Biasanya menggunakan file .htaccess

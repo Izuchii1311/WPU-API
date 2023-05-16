@@ -1,6 +1,6 @@
-[
-    {
-        "menu" : {
+{
+    "menu" : [
+        {
             "makanan" : [
                 {
                     "menuPaket1" : "Big Mac® Gratis McFlurry Oreo",
@@ -14,8 +14,9 @@
                     "menuPaket3" : "6pcs McNuggets® Gratis McFlurry Oreo",
                     "harga" : 52500
                 }
-            ],
-            
+            ]
+        },
+        {
             "minuman" : [
                 {
                     "menuMinuman1" : "Iced Coffee Caramel Macchiato with Jelly Float",
@@ -29,8 +30,9 @@
                     "menuMinuman3" : "Premium Roast Coffee",
                     "harga" : 12000
                 }
-            ],
-            
+            ]
+        },
+        {
             "pencuciMulut" : [
                 {
                     "menu1" : "Double Choco Pie",
@@ -46,5 +48,5 @@
                 }
             ]
         }
-    }
-]
+    ]
+}
