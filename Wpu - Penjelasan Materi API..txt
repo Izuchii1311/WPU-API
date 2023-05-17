@@ -137,7 +137,7 @@ Membuat json { "key" : "value" }
 
 Bekerja Dengan JSON (PHP)
 > json_encode(), untuk mengubah array atau object yang kita punya menjadi JSON.
-> json_decode(), untuk mengambil JSON dirubah menjadi Array supaya gampang untuk dimanipulasi.
+> json_decode(), untuk mengambil JSON dirubah menjadi Array supaya gampang untuk dimanipulasi. // json_decode(jika true jadi object jika false jadi array)
 
 Mengakses JSON dari file lain menggunakan
 > file_get_contents()
@@ -209,3 +209,139 @@ Otentikasi (Auth)
 > Key / Token
 > OAuth -> contoh : Login via.facebook / via.google
 > CORS
+
+Pembelajaran Izu-Movie
+
+
+
+
+
+#6 Youtube & Instagram API (menggunakan cURL)
+
+{REST:API}::PUBLIC_API
+
+Youtube & Instagram API
+
+API client
+> dapat menggunakan file_get_contents()   -- PHP
+> dapat menggunakan ajax()                -- JavaScript
+> dapat menggunakan cURL                  -- PHP
+
+Melakukan koneksi ke API Youtube dan Instagram dengan menggunkan cURL.
+Untuk tampilannya menggunakan latihan dari bootstrap 4.
+Akan menampilkan video dan postingan dari media sosial kita dengan menggunakan API.
+
+API Youtube : https://developers.google.com/youtube/v3
+Sebelum bisa melakukannya kita harus memiliki key nya dan masuk ke console google.
+
+Masuk ke Add YouTube functionality to your site >> lalu Get Started
+Arahkan ke- Google Developers Console 
+Lalu New Project (isikan Nama Project) >> lalu create
+Kemudian cari YouTube Data Api v.3 >> klik enable
+
+Untuk membuat key-nya dapat dengan cara (Create Credentials dan pilih Youtube Data Api v.3 & Public Data) 
+Jika sudah maka akan ada key seperti berikut (AIzaSyAnkCSZL9HT8pwBH9Kvkas7sSJx0n0UE5Y)
+
+Masuk kembali ke : https://developers.google.com/youtube
+Lalu masuk ke Reference dan di sebelah kiri itu adalah overview dari apinya.
+
+Yang akan di cari di kasus ini adalah, Foto Profil Youtube, Jumlah Subs, Video Terakhir.
+Untuk Profile Picture masuk ke Channels > overview
+
+Maka akan menampilkan data json, untuk menggunakannya kita dapat dengan cara masuk ke bagian list.
+
+Akan tampil URL-nya : https://www.googleapis.com/youtube/v3/channels
+Akan ada juga Part untuk menampilkan datanya :
+auditDetails, brandingSettings, contentDetails,contentOwnerDetails, id, localizations, snippet, statistics, status, topicDetails
+
+
+Untuk Mengecek keterhubungan API-nya dapat dengan menggunakan Postman.
+GET -- url (https://www.googleapis.com/youtube/v3/channels)
+params
+  part    snippet,statistics
+  id      UCz_6wfT9e2moOT1ZkOZmFbA
+  key      AIzaSyAnkCSZL9HT8pwBH9Kvkas7sSJx0n0UE5Y
+
+  *untuk mendapatkan id, kita dapat membuka youtube dan klik profil maka akan tampil id youtubenya.
+  dan key-nya yang tadi berada di dalam web https://developers.google.com/youtube
+
+  
+Selanjutnya akan melakukan connect ke API menggunakan teknik cURL (client URL)
+
+  *connect API using cURL
+    // Menggunakan clientURL
+    function get_CURL($url){
+        $curl = curl_init();
+
+        curl_setopt($curl, CURLOPT_URL, $url);
+        // mengembalikan text
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        // eksekusi
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        // json_decode(jika true jadi object jika false jadi array)
+        return json_decode($result, true);
+    }
+
+    $result = get_CURL('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=UCz_6wfT9e2moOT1ZkOZmFbA&key=AIzaSyAnkCSZL9HT8pwBH9Kvkas7sSJx0n0UE5Y');
+
+    $youtubeProfilePicture = $result['items'][0]['snippet']['thumbnails']['medium']['url']; 
+    $channelName = $result['items'][0]['snippet']['title'];
+    $subscriber = $result['items'][0]['statistics']['subscriberCount'];
+
+
+Untuk Latest Video kita arahkan ke Search > List
+parameter yang akan di pakai adalah part, channelId, maxResults, order
+
+Untuk Mengecek keterhubungan API-nya dapat dengan menggunakan Postman.
+GET -- url (https://www.googleapis.com/youtube/v3/search)
+params
+  part            snippet
+  channelId       UCz_6wfT9e2moOT1ZkOZmFbA
+  key             AIzaSyAnkCSZL9HT8pwBH9Kvkas7sSJx0n0UE5Y
+  order           date
+  maxResults      1
+
+Untuk mengganti video terakhirnya yang dibutuhkan adalah VideoId
+
+  *connect API using cURL
+    // Menggunakan clientURL
+    function get_CURL($url){
+        $curl = curl_init();
+
+        curl_setopt($curl, CURLOPT_URL, $url);
+        // mengembalikan text
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        // eksekusi
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        // json_decode(jika true jadi object jika false jadi array)
+        return json_decode($result, true);
+    }
+
+    $result = get_CURL('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=UCz_6wfT9e2moOT1ZkOZmFbA&key=AIzaSyAnkCSZL9HT8pwBH9Kvkas7sSJx0n0UE5Y');
+
+    $youtubeProfilePicture = $result['items'][0]['snippet']['thumbnails']['medium']['url']; 
+    $channelName = $result['items'][0]['snippet']['title'];
+    $subscriber = $result['items'][0]['statistics']['subscriberCount'];
+
+
+    // Latest Video
+    $urlLatestVideo = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAnkCSZL9HT8pwBH9Kvkas7sSJx0n0UE5Y&channelId=UCz_6wfT9e2moOT1ZkOZmFbA&maxResult=1&order=date&part=snippet';
+    $result = get_CURL($urlLatestVideo);
+
+    $latestVideoId = $result['items'][0]['id']['videoId'];
+
+
+Selanjutnya akan membuat Subscribe Button 
+ada di halaman awal (https://developers.google.com/youtube) >> lalu add a button
+Lalu kita dapat melakukan configurasi buttonnya.
+
+
+Untuk API Instagram kita hanya bisa mengambil data pribadi kita saja
+Url API : (https://www.instagram.com/developer/)
+lakukan login kemudian > buat aplikasi
+
++++ PROBlEM API INSTAGRAM +++
